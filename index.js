@@ -1,20 +1,25 @@
-// export default './utils/colors'
-import * as colors from './utils/colors'
-export { colors }
+// import default './utils/colors'
+// import * as colors from './utils/colors'
+// module.exports.colors = colors
 
 import * as random from './utils/random'
-export { random, random as randoms }
+module.exports.random = random
+module.exports.randoms = random
 
 import FetchPromise from './utils/FetchPromise'
-export { FetchPromise }
+module.exports.FetchPromise = FetchPromise
 
-export * as dates from './utils/dates'
+import * as dates from './utils/dates'
+module.exports.dates = dates
 
-export * as objects from './utils/objects'
+import * as objects from './utils/objects'
+module.exports.objects = objects
 
-export * as hashes from './utils/hashes'
+// import * as hashes from './utils/hashes'
+// module.exports.hashes = hashes
 
-export SteppedAction from './utils/SteppedAction'
+// import SteppedAction from './utils/SteppedAction'
+// module.exports.SteppedAction = SteppedAction
 
 // import ReduxActions from './utils/ReduxActions'
-// export { ReduxActions }
+// import { ReduxActions }

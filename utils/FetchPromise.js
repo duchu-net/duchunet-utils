@@ -212,4 +212,4 @@ class FetchError {
 }
 // FetchError.prototype = new Error;
 
-export default FetchPromise;
+module.exports = FetchPromise;

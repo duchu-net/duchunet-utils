@@ -77,7 +77,7 @@ function deepCloneArray(arr) {
  * object as first argument, like this:
  *   assignDeep({}, yourObj_1, [yourObj_N]);
  */
-export default function assignDeep(/*obj_1, [obj_2], [obj_N]*/) {
+module.exports = function assignDeep(/*obj_1, [obj_2], [obj_N]*/) {
 	if (arguments.length < 1 || typeof arguments[0] !== 'object') {
 		return false;
 	}

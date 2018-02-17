@@ -50,4 +50,4 @@ class XorShift128{
 	}
 }
 
-export default XorShift128
+module.exports = XorShift128

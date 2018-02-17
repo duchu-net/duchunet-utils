@@ -185,4 +185,4 @@ class SteppedAction{
 	}
 }
 
-export default SteppedAction;
+module.exports = SteppedAction;
