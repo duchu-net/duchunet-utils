@@ -1,30 +1,32 @@
 import moment from 'moment';
 
-module.exports.getDeltaDate = (delta, humanRead = false) => {
+// module.exports = {}
+
+export function getDeltaDate(delta, humanRead = false) {
   const now = Date.now();
   const date = now + delta;
   if (humanRead) return toHumanRead(date);
   return date;
 }
 
-module.exports.toServerFormat = (date) => {
+export function toServerFormat(date) {
   date = moment(new Date(date));
   return date.utc().format();
   // return date.format('YYYY-MM-DDT+-HH:mm:ss');
   // dataItem[columnItem.data] = date.format('HH:MM DD-MM-YYYY');
 }
 
-module.exports.toHumanRead = (date) => {
+export function toHumanRead(date) {
   date = moment(new Date(date));
   return date.utc().format('HH:mm:ss DD-MM-YYYY');
 }
 
-module.exports.addToDate = (date, add, to) => {
+export function addToDate(date, add, to) {
   date = moment(new Date(date));
   return date.add(add, to).format();
 }
 
-module.exports.getOnlyDate = (date) => {
+export function getOnlyDate(date) {
   date = moment(new Date(date));
   date.hours(0);
   date.minutes(0);
@@ -32,10 +34,10 @@ module.exports.getOnlyDate = (date) => {
   return date.format();
 }
 
-module.exports.toUTC = (date) => {
+export function toUTC(date) {
 
   return null;
 }
-module.exports.fromUTC = (date) => {
+export function fromUTC(date) {
 
 }

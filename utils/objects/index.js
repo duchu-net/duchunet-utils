@@ -1,7 +1,7 @@
 import assignDeep from './assignDeep'
-module.exports.assignDeep = assignDeep
+export { assignDeep }
 
-module.exports.hashString(s) {
+export function hashString(s) {
   let hash = 0
   const length = s.length
   if (length === 0)
@@ -17,7 +17,7 @@ module.exports.hashString(s) {
 
 
 // https://github.com/darkskyapp/string-hash
-module.exports.hashString2(str) {
+export function hashString2(str) {
   var hash = 0;
   for (let i = 0; i < str.length; i++) {
       const char = str.charCodeAt(i);

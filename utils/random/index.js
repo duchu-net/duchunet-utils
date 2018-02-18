@@ -1,15 +1,15 @@
 import XorShift128 from './XorShift128'
-module.exports.XorShift128 = XorShift128
+export { XorShift128 }
 
-module.exports.int(from = 1, to = 100) {
+export function int(from = 1, to = 100) {
   return Math.floor((Math.random() * to) + from);
 }
 
-module.exports.uuid() {
+export function uuid() {
   return uuid4();
 }
 
-module.exports.uuid4() {
+export function uuid4() {
   return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
     const r = Math.random() * 16 | 0;
     const v = c == 'x' ? r : (r&0x3|0x8);
@@ -17,7 +17,7 @@ module.exports.uuid4() {
   });
 }
 
-module.exports.elementFromArray(array = []) {
+export function elementFromArray(array = []) {
   const random_num = int(0, array.length - 1)
   return array[random_num]
 }

@@ -5,9 +5,11 @@ const API_ACTIONS = ''; //Config.get('api.actions');
 
 
 class FetchPromise {
-  request = {
-    type: 'json',
-    timeout: 3000,
+  constructor() {
+    this.request = {
+      type: 'json',
+      timeout: 3000,
+    }
   }
 
   // OVERWRITE
@@ -116,11 +118,10 @@ class FetchPromise {
         break;
     }
 
-    return dispatch({
+    return dispatch(Object.assign({}, {
       type: responseType,
       meta: { api: true },
-      ...addedToAction,
-    });
+    }, addedToAction));
   }
 
   fetchResponse(response) {
@@ -173,14 +174,13 @@ class FetchPromise {
 
 
 class ApiError {
-  static uxMessages = {
-    timeout: 'serwer nie odpowiada',
-    network: 'problem z siecią',
-    connection: 'problem z połączeniem',
-    UNDEFINED_ERROR: '_UNDEFINED_ERROR',
-  }
-
   constructor(type) {
+    this.uxMessages = {
+      timeout: 'serwer nie odpowiada',
+      network: 'problem z siecią',
+      connection: 'problem z połączeniem',
+      UNDEFINED_ERROR: '_UNDEFINED_ERROR',
+    }
     this.name = 'ApiError';
     this.type = type || 'UNDEFINED_ERROR';
     // this.user = this.getUserMessage(type);
